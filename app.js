@@ -57,7 +57,7 @@ app.post("/register", async (request, response) => {
 
 app.post("/login", async (request, response) => {
   let { username, password } = request.body;
-  app.use(express.json());
+  
   let userconfirm = `select * from user where username = '${username}'`;
   let verifyuser = await db.get(userconfirm);
 
